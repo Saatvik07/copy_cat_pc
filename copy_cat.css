@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  font-family: "Russo One", sans-serif;
+}
+.left,
+.centre {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+.left {
+  width: 400px;
+}
+.inst_head {
+  background-color: lightblue;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 0 20px lightblue, 0 0 20px lightblue, 0 0 20px lightblue;
+}
+.inst_list {
+  font-size: 20px;
+  margin: 20px 0px;
+  color: antiquewhite;
+}
+.inst_li {
+  margin: 10px;
+}
+.row_1,
+.row_2,
+.row_3,
+.row_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.start_div,
+.end_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.start_btn {
+  color: greenyellow;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.reset_btn {
+  color: blue;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
+.reset_btn:hover {
+  color: black;
+  background-color: blue;
+  box-shadow: 0 0 10px blue, 0 0 40px blue, 0 0 80px blue;
+}
+.start_btn:hover {
+  color: black;
+  background-color: greenyellow;
+  box-shadow: 0 0 10px greenyellow, 0 0 40px greenyellow, 0 0 80px greenyellow;
+}
+.score {
+  background-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: black;
+  margin-left: 50px;
+  box-shadow: 0 0 20px orange, 0 0 20px orange, 0 0 20px orange;
+}
+.key {
+  background-color: antiquewhite;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.correct {
+  color: green;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 30px;
+}
+.incorrect {
+  color: red;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 30px;
+}
+.timer {
+  background-color: lightblue;
+  text-align: center;
+  width: 80%;
+  margin: 30px auto;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 0 20px lightblue, 0 0 20px lightblue, 0 0 20px lightblue;
+}
+#seconds {
+  font-size: 50px;
+  background-color: black;
+  color: antiquewhite;
+  margin: 0 auto;
+}
+.end_game {
+  display: none;
+  font-size: 50px;
+  color: red;
+  text-align: center;
+  margin: 50px;
+}
+.lost,
+.won {
+  display: none;
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  margin: 50px;
+  padding: 10px;
+  box-shadow: 0 0 10px red, 0 0 40px red;
+}
+.won {
+  color: green;
+  box-shadow: 0 0 10px green, 0 0 40px green;
+}
+.timer_div {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
