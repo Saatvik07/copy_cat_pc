@@ -53,6 +53,8 @@ let seconds = document.getElementById("seconds");
 let score_val = 0;
 let key_active = 12345;
 let secs = 30;
+let game_begin = 0;
+let reset_game = 0;
 const GameOver = () => {
   row_1.style.display = "none";
   row_2.style.display = "none";
@@ -68,8 +70,8 @@ const GameOver = () => {
 function Decrement() {
   if (document.getElementById) {
     seconds.innerHTML = secs;
-    if (secs === 0) {
-      GameOver();
+    if (secs === 0 || reset_game === 1) {
+      if (reset_game != 1) GameOver();
       return;
     }
     if (secs < 10) {
@@ -83,15 +85,16 @@ function countdown() {
   setTimeout("Decrement()", 60);
 }
 const resetGame = () => {
-  reset.style.display = "none";
-  start.style.display = "inline-block";
   score_val = 0;
   secs = 30;
   seconds.innerHTML = 30;
+  game_begin = 0;
+  reset_game = 1;
   scoreboard.innerHTML = `Score:${score_val}`;
   document.getElementById(`key_${key_active}`).style.backgroundColor = "";
   correct.style = "";
   incorrect.style = "";
+  start.style.display = "";
   won.style = "";
   lost.style = "";
   row_1.style = "";
@@ -110,10 +113,13 @@ const Idkey = (num) => {
 };
 
 const startGame = () => {
-  countdown();
   start.style.display = "none";
-  reset.style.display = "inline-block";
-  lightUpKey();
+  game_begin = 1;
+  reset_game = 0;
+  if (game_begin === 1) {
+    countdown();
+    lightUpKey();
+  }
 };
 const lightUpKey = () => {
   key_active = randomKey();
@@ -124,14 +130,14 @@ const lightUpKey = () => {
 };
 document.addEventListener("keydown", (event) => {
   const light_up = document.getElementById(`key_${key_active}`);
-  if (event.key === `${num_arr[key_active]}`) {
+  if (event.key === `${num_arr[key_active]}` && game_begin === 1) {
     score_val++;
     scoreboard.innerHTML = `Score:${score_val}`;
     light_up.style.backgroundColor = "";
     correct.style = "background-color:green; box-shadow: 0 0 10px green, 0 0 40px green;color:black";
     incorrect.style = "";
     lightUpKey();
-  } else {
+  } else if (game_begin === 1) {
     score_val--;
     scoreboard.innerHTML = `Score:${score_val}`;
     light_up.style.backgroundColor = "";
